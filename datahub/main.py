@@ -3,9 +3,7 @@ import argparse
 from datahub import utils
 
 comands = {
-    "init": utils.init,
-    "update": utils.update,
-    "clearall": utils.clearall
+    "configure": utils.cli_configure
 }
 
 def arg_parser():
