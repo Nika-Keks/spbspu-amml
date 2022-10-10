@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='spbstu-amml',
     packages=find_packages(),
-    version='1.2.0',
+    version='1.2.1',
     author='',
     description='modelhub',
     long_description='',
