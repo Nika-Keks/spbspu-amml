@@ -16,13 +16,18 @@ $ pip install spbstu-amml
 ```python
 from spbstuamml.models import vgg
 model = vgg.vgg16_from_hub(dataset="pneumonia")
-print(model.layers[:4])
+model.summary()
 ```
-```bash
-[<keras.engine.functional.Functional object at 0x7f736e8e2d70>, <keras.layers.reshaping.flatten.Flatten object at 0x7f736dea3130>, <keras.layers.core.dense.Dense object at 0x7f736dec9bd0>]
+```console
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ vgg16 (Functional)          (None, 7, 7, 512)         14714688  
+...
 ```
 
-Модель будет загружена и прочитана из файла.
+Модель будет загружена один раз и использована в дальнейшем.
 
 Внимание! 
 Пакет не тянет за собой библиотеки для машинного обучения, их пользователь должен установитьс сам.
@@ -60,4 +65,20 @@ $ python3 -m datahub configure \
 > --access-key-id "access-key-id" \
 > --secret-access-key "secret-access-key" \
 > --region "default"
+```
+
+все агрументы описаны в help
+
+```console
+$ python3 -m datahub configure -h
+
+Configuration commad
+
+options:
+  -h, --help            show this help message and exit
+  --access-key-id ACCESS_KEY_ID
+                        aws access key
+  --secret-access-key SECRET_ACCESS_KEY
+                        aws secret key
+  --region REGION       region. may be depault, central1 or other, see aws documentation
 ```
