@@ -1,7 +1,6 @@
 import os
 import dvc.api
 
-from dvc.fs import callbacks as fscb
 from fsspec import callbacks as fsscb
 
 __all__ = ["DSHalper"]
